@@ -16,12 +16,13 @@ class JokeSpider(scrapy.Spider):
 
     url = response.url
     print url
-    divs = page.xpath('//div[@class="article block untagged mb15"]')
+
+    divs = page.xpath('//div[@class="content"]')
 
     for div in divs:
       item = JokestextItem()
 
-      content_list= div.xpath('.//div[@class="content"]/text()').extract()
+      content_list= div.xpath('./text()').extract()
 
       text = ""
       for string in content_list:

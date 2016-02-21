@@ -8,7 +8,7 @@
 
 class JokestextPipeline(object):
   def __init__(self):
-  	self.file = open('jokestext.dat', 'wb')
+  	self.file = open('jokestext.dat', 'ab')
 
 
 
